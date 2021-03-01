@@ -3,14 +3,16 @@ node_js:
   - '14'
 jobs:
   include:
-    - stage: tests
+    - stage: Tests
       name: Build
       script: npm run build
-    - name: Unit Tests
-      script: npm run test:unit
-      services:
-        - postgresql
     - name: Lint
       script: npm run test:lint
     - name: Prettier
       script: npm run prettier:check
+    - name: Unit Tests
+      script: npm run test:cov
+    - name: E2E Tests
+      script: npm run test:e2e
+      services:
+        - postgresql

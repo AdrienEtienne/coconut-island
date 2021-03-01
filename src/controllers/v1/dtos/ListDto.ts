@@ -1,10 +1,9 @@
-
 export class ListDto<T> {
-  object: "list" = 'list';
+  object: "list" = "list";
 
   data: T[];
 
-  constructor(data: T[]){
-      this.data = data;
+  constructor(data: T[]) {
+    this.data = data;
   }
 }
