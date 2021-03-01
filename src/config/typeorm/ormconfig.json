@@ -7,15 +7,9 @@
   "username": "postgres",
   "password": "",
   "synchronize": false,
-  "ssl": true,
-  "extra": {
-    "ssl": {
-      "rejectUnauthorized": false
-    }
-  },
   "logging": false,
   "entities": [
-    "src/app/**/*.entity.{js,ts}"
+    "src/app/**/*Entity.{js,ts}"
   ],
   "migrations": [
     "src/migration/**/*.{js,ts}"
