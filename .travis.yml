@@ -7,9 +7,9 @@ jobs:
       name: Build
       script: npm run build
     - name: Lint
-      script: npm run test:lint
-    - name: Prettier
-      script: npm run prettier:check
+      script: npm run lint
+    - name: Format
+      script: npm run format:check
     - name: Unit Tests
       script: npm run test:cov
     - name: E2E Tests
