@@ -1,13 +1,13 @@
-import {Season} from "./Season";
+import {Seasonality} from "./seasonality";
 
 export class Produce {
   id: number;
   name: string;
-  season: Season;
+  seasonality: Seasonality;
 
-  constructor(id: number, name: string, season: Season) {
+  constructor(id: number, name: string, seasonality: Seasonality) {
     this.id = id;
     this.name = name;
-    this.season = season;
+    this.seasonality = seasonality;
   }
 }

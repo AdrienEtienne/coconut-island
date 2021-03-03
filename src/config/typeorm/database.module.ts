@@ -1,7 +1,7 @@
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {join} from "path";
 import {ConnectionOptions} from "typeorm";
-import {ProduceEntity} from "../../app/produce/infrastructure/ProduceEntity";
+import {ProduceEntity} from "../../app/produce/infrastructure/produce.entity";
 import {
   DATABASE_HOST,
   DATABASE_MIGRATE,

@@ -1,1 +1,1 @@
-export * from "./DatabaseModule";
+export * from "./database.module";

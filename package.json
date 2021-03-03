@@ -29,6 +29,7 @@
     "@nestjs/core": "^7.6.13",
     "@nestjs/platform-express": "^7.6.13",
     "@nestjs/typeorm": "^7.1.5",
+    "lodash": "^4.17.21",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -41,6 +42,7 @@
     "@nestjs/testing": "^7.6.13",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.31",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
@@ -72,7 +74,7 @@
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s",
-      "!**/*Module.(t|j)s",
+      "!**/*.module.(t|j)s",
       "!migration/**"
     ],
     "coverageDirectory": "../coverage",
