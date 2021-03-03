@@ -21,9 +21,9 @@ describe("ProduceController (e2e)", () => {
     await produces.delete({});
   });
 
-  it("/ (GET)", async () => {
+  it("/produces (GET)", async () => {
     const response = await request(app.getHttpServer()).get("/produces").expect(200);
-    expect(response.body).toContain({
+    expect(response.body).toStrictEqual({
       object: "list",
       data: []
     });
