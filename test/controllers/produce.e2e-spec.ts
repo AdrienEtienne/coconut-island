@@ -1,9 +1,9 @@
 import {Test, TestingModule} from "@nestjs/testing";
 import {INestApplication} from "@nestjs/common";
 import * as request from "supertest";
-import {AppModule} from "./../../src/AppModule";
+import {AppModule} from "./../../src/app.module";
 import {Repository} from "typeorm";
-import {ProduceEntity} from "../../src/app/produce/infrastructure/ProduceEntity";
+import {ProduceEntity} from "../../src/app/produce/infrastructure/produce.entity";
 import {getRepositoryToken} from "@nestjs/typeorm";
 
 describe("ProduceController (e2e)", () => {
