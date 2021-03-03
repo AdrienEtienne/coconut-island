@@ -1,9 +1,8 @@
 import {Injectable} from "@nestjs/common";
 import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
-import {IProduceRepository} from "../domain/IProduceRepository";
-import {Produce} from "../domain/Produce";
-import {ProduceEntity} from "./ProduceEntity";
+import {IProduceRepository, Produce, Seasonality} from "../domain";
+import {ProduceEntity} from "./produce.entity";
 
 @Injectable()
 export class ProduceRepository implements IProduceRepository {
@@ -11,6 +10,14 @@ export class ProduceRepository implements IProduceRepository {
 
   async findAll(): Promise<Produce[]> {
     const entities = await this.produces.find();
-    return entities.map((el) => new Produce(el.id, el.name));
+    return entities.map(this.map);
+  }
+
+  private map(produceEntity: ProduceEntity): Produce {
+    return new Produce(
+      produceEntity.id,
+      produceEntity.name,
+      new Seasonality(produceEntity.seasonFirstMonth, produceEntity.seasonMonthsCount)
+    );
   }
 }

@@ -1,4 +1,4 @@
-import {Produce} from "./Produce";
+import {Produce} from "./produce";
 
 export interface IProduceRepository {
   findAll(): Promise<Produce[]>;

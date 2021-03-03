@@ -1,2 +1,3 @@
-export * from "./ProduceDto";
-export * from "./ListDto";
+export * from "./list.dto";
+export * from "./produce.dto";
+export * from "./seasonality.dto";
