@@ -1,6 +1,4 @@
 import {Month} from "./month.enum";
-import {Season} from "./season.enum";
-import {some} from "lodash";
 
 export class Seasonality {
   readonly months: Month[];
@@ -11,30 +9,6 @@ export class Seasonality {
 
   get isAllYear() {
     return this.months.length === 0 || this.months.length === 12;
-  }
-
-  get seasons(): Season[] {
-    const seasons: Season[] = [];
-    // Spring
-    if (some(this.months, (el) => el === Month.March || el === Month.April || el === Month.May)) {
-      seasons.push(Season.Spring);
-    }
-
-    // Summer
-    if (some(this.months, (el) => el === Month.June || el === Month.July || el === Month.August)) {
-      seasons.push(Season.Summer);
-    }
-
-    // Autumn
-    if (some(this.months, (el) => el === Month.September || el === Month.October || el === Month.November)) {
-      seasons.push(Season.Autumn);
-    }
-
-    // Winter
-    if (some(this.months, (el) => el === Month.December || el === Month.January || el === Month.February)) {
-      seasons.push(Season.Winter);
-    }
-    return seasons;
   }
 
   constructor(firstMonth: number, monthsCount: number) {

@@ -17,8 +17,7 @@ export class ProduceController {
         seasonality: {
           firstMonth: el.seasonality.firstMonth,
           isAllYear: el.seasonality.isAllYear,
-          months: el.seasonality.months,
-          seasons: el.seasonality.seasons
+          months: el.seasonality.months
         }
       }))
     };

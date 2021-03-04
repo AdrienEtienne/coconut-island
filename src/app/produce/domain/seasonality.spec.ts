@@ -1,5 +1,4 @@
 import {Month} from "./month.enum";
-import {Season} from "./season.enum";
 import {Seasonality} from "./seasonality";
 
 describe("Seasonality", () => {
@@ -20,17 +19,5 @@ describe("Seasonality", () => {
   ])("should return valid months", (el) => {
     const seasonality = new Seasonality(el.firstMonth, el.monthsCount);
     expect(seasonality.months).toEqual(el.months);
-  });
-
-  it.each([
-    {firstMonth: 0, monthsCount: 0, seasons: [Season.Spring, Season.Summer, Season.Autumn, Season.Winter]},
-    {firstMonth: 3, monthsCount: 3, seasons: [Season.Spring]},
-    {firstMonth: 6, monthsCount: 3, seasons: [Season.Summer]},
-    {firstMonth: 9, monthsCount: 3, seasons: [Season.Autumn]},
-    {firstMonth: 12, monthsCount: 3, seasons: [Season.Winter]}
-  ])("should return valid seasons", (el) => {
-    const seasonality = new Seasonality(el.firstMonth, el.monthsCount);
-
-    expect(seasonality.seasons).toStrictEqual(el.seasons);
   });
 });
