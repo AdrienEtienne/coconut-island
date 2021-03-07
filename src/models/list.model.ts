@@ -1,4 +1,4 @@
-export class ListDto<T> {
+export class ListModel<T> {
   object: "list" = "list";
   data: T[];
 }
