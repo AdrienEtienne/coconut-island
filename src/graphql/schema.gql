@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProduceModel {
+  id: ID!
+  name: String!
+  seasonality: SeasonalityModel!
+}
+
+type Query {
+  produce(id: Float!): ProduceModel!
+  produces: [ProduceModel!]!
+}
+
+type SeasonalityModel {
+  firstMonth: Float!
+  isAllYear: Boolean!
+  months: [Float!]!
+}

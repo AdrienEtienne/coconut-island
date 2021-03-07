@@ -1,13 +1,13 @@
 import {Controller, Get} from "@nestjs/common";
 import {ProduceRepository} from "../../app/produce/infrastructure/produce.repository";
-import {ListDto, ProduceDto} from "./dtos";
+import {ListModel, ProduceModel} from "../../models";
 
 @Controller("produces")
 export class ProduceController {
   constructor(private readonly produceRepository: ProduceRepository) {}
 
   @Get()
-  async findAll(): Promise<ListDto<ProduceDto>> {
+  async findAll(): Promise<ListModel<ProduceModel>> {
     const produces = await this.produceRepository.findAll();
     return {
       object: "list",

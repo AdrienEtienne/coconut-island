@@ -1,6 +1,6 @@
 import {Module} from "@nestjs/common";
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {DatabaseModule} from "../../../config/typeorm";
+import {DatabaseModule} from "../../../config/typeorm/database.module";
 import {ProduceEntity} from "../infrastructure/produce.entity";
 import {ProduceRepository} from "../infrastructure/produce.repository";
 
