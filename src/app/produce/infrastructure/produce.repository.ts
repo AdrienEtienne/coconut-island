@@ -9,9 +9,15 @@ import {ProduceEntity} from "./produce.entity";
 export class ProduceRepository implements IProduceRepository {
   constructor(@InjectRepository(ProduceEntity) private produces: Repository<ProduceEntity>) {}
 
-  async findAll(): Promise<Produce[]> {
+  async findAll({month}: {month?: number} = {}): Promise<Produce[]> {
     const entities = await this.produces.find();
-    return entities.map(this.map);
+    let produces = entities.map(this.map);
+
+    if (month) {
+      produces = produces.filter((produce) => produce.seasonality.months.indexOf(month) !== -1);
+    }
+
+    return produces;
   }
 
   async findOneById(id: number): Promise<Produce> {

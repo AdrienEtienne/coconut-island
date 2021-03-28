@@ -10,7 +10,7 @@ type ProduceModel {
 
 type Query {
   produce(id: Float!): ProduceModel!
-  produces: [ProduceModel!]!
+  produces(month: Float): [ProduceModel!]!
 }
 
 type SeasonalityModel {
