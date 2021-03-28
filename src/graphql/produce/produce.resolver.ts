@@ -9,8 +9,9 @@ export class ProducesResolver {
   constructor(private readonly produceRepository: ProduceRepository) {}
 
   @Query(() => [ProduceModel])
-  produces(): Promise<ProduceModel[]> {
-    return this.produceRepository.findAll();
+  async produces(@Args("month", {nullable: true}) month: number | null): Promise<ProduceModel[]> {
+    const produces = await this.produceRepository.findAll({month: month || undefined});
+    return produces;
   }
 
   @Query(() => ProduceModel)
